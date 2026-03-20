@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos — Portfolio{% endblock %}
+
+{% block body %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">À propos <span class="highlight">de moi</span></h1>
+        <p class="page-subtitle">Apprenez-en plus sur mon parcours et mes passions</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image-col">
+                <div class="about-photo-wrapper">
+                    <img src="https://via.placeholder.com/500x600/6C63FF/ffffff?text=Photo" alt="Photo de profil" class="about-photo">
+                </div>
+            </div>
+            <div class="about-text-col">
+                <h2>Qui suis-je ?</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultrices, nunc nisl aliquet nunc, quis aliquam nisl nunc eu nisl. Sed euismod, nisl eget aliquam ultrices, nunc nisl aliquet nunc.
+                </p>
+                <p>
+                    Actuellement en 2ème année de BTS SIO option SLAM au lycée Beaupeyrat, je suis passionné par le développement d'applications et la conception de solutions logicielles.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel.
+                </p>
+
+                <div class="about-info">
+                    <div class="info-item">
+                        <span class="info-label">Nom :</span>
+                        <span class="info-value">Prénom Nom</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Formation :</span>
+                        <span class="info-value">BTS SIO SLAM — 2ème année</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Établissement :</span>
+                        <span class="info-value">Lycée Beaupeyrat</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Localisation :</span>
+                        <span class="info-value">Limoges, France</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email :</span>
+                        <span class="info-value">votre.email@example.com</span>
+                    </div>
+                </div>
+
+                <a href="{{ path('app_contact') }}" class="btn btn-primary">Me contacter</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Mes <span class="highlight">centres d'intérêt</span></h2>
+        <div class="interests-grid">
+            <div class="interest-card">
+                <div class="interest-icon">💻</div>
+                <h3>Développement</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🎮</div>
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">📚</div>
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🏃</div>
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
