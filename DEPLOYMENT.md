@@ -79,20 +79,14 @@ https://benjamin-baillard.alwaysdata.net
 ### Sur le PC local (après modifications)
 
 ```bash
-git add -A
-git commit -m "description du changement"
-git push
+git add -A && git commit -m "description du changement" && git push
 ```
 
 ### Sur Alwaysdata (en SSH)
 
 ```bash
 cd www
-git pull
-composer install --no-dev --optimize-autoloader
-php bin/console importmap:install
-php bin/console asset-map:compile
-php bin/console cache:clear --env=prod
+git pull && composer install --no-dev --optimize-autoloader && php bin/console importmap:install && php bin/console asset-map:compile && php bin/console cache:clear --env=prod
 ```
 
 ### Mise à jour rapide (templates Twig ou CSS/JS uniquement)
@@ -101,9 +95,7 @@ Si seuls les templates ou les fichiers CSS/JS ont été modifiés (pas de nouvel
 
 ```bash
 cd www
-git pull
-php bin/console asset-map:compile
-php bin/console cache:clear --env=prod
+git pull && php bin/console asset-map:compile && php bin/console cache:clear --env=prod
 ```
 
 Les étapes `composer install` et `importmap:install` ne sont nécessaires que si des dépendances PHP ou JavaScript ont été ajoutées/modifiées.
