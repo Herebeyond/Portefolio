@@ -13,14 +13,14 @@
 
 1. Aller sur [alwaysdata.com](https://www.alwaysdata.com/fr/)
 2. Créer un compte gratuit (plan 100 Mo)
-3. Un sous-domaine sera attribué automatiquement : `toncompte.alwaysdata.net`
+3. Un sous-domaine sera attribué automatiquement : `benjamin-baillard.alwaysdata.net`
 
 ---
 
 ## 2. Se connecter en SSH
 
 ```bash
-ssh toncompte@ssh-toncompte.alwaysdata.net
+ssh benjamin-baillard@ssh-benjamin-baillard.alwaysdata.net
 ```
 
 Le mot de passe est celui du compte Alwaysdata.
@@ -69,7 +69,7 @@ php bin/console cache:clear --env=prod
 
 Le portfolio est accessible à l'adresse :
 ```
-https://toncompte.alwaysdata.net
+https://benjamin-baillard.alwaysdata.net
 ```
 
 ---
