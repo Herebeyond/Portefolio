@@ -1025,63 +1025,89 @@ ul {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER (removed)
    ======================================== */
-.footer {
-    background: var(--dark);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 60px 0 0;
+
+/* ========================================
+   ANIMATED BACKGROUND
+   ======================================== */
+.main-content {
+    position: relative;
 }
 
-.footer-content {
+.main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse 600px 600px at 10% 20%, rgba(108, 99, 255, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 90% 80%, rgba(255, 101, 132, 0.03) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 400px at 50% 50%, rgba(108, 99, 255, 0.02) 0%, transparent 70%);
+    animation: bgFloat 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgFloat {
+    0% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+    33% {
+        background-position: 20% 30%, 80% 60%, 40% 70%;
+    }
+    66% {
+        background-position: 40% 10%, 60% 90%, 70% 30%;
+    }
+    100% {
+        background-position: 10% 40%, 90% 50%, 30% 60%;
+    }
+}
+
+/* Floating orbs */
+.main-content::after {
+    content: '';
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.05) 0%, transparent 70%);
+    top: 30%;
+    right: -100px;
+    pointer-events: none;
+    z-index: -1;
+    animation: orbFloat 15s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 30px); }
+    100% { transform: translate(20px, -20px); }
+}
+
+/* ========================================
+   FORMATION PAGE — Side by Side
+   ======================================== */
+.formation-columns {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
 }
 
-.footer-logo {
-    font-size: 1.25rem;
+.col-title {
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--white);
-    display: block;
-    margin-bottom: 12px;
+    color: var(--gray-900);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-light);
 }
 
-.footer-left p {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-}
-
-.footer-center h4,
-.footer-right h4 {
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-.footer-center a,
-.footer-right a {
-    display: block;
-    font-size: 0.9rem;
-    padding: 4px 0;
-    color: rgba(255, 255, 255, 0.6);
-    transition: var(--transition);
-}
-
-.footer-center a:hover,
-.footer-right a:hover {
-    color: var(--primary-light);
-    padding-left: 4px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 24px 0;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.4);
+.formation-columns .timeline {
+    max-width: none;
 }
 
 /* ========================================
@@ -1128,8 +1154,9 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
+    .formation-columns {
+        grid-template-columns: 1fr;
+        gap: 60px;
     }
 }
 
@@ -1214,11 +1241,6 @@ ul {
     .certifications-grid,
     .interests-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
     }
 
     .social-links {
