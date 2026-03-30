@@ -1337,6 +1337,32 @@ ul {
 .animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
 
 /* ========================================
+   COMING SOON
+   ======================================== */
+.coming-soon {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.coming-soon-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.coming-soon-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.coming-soon-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 1024px) {
