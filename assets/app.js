@@ -1,13 +1,5 @@
 import './styles/app.css';
 
-// Theme toggle — apply saved theme immediately to avoid flash
-(function() {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-})();
-
 // Navigation mobile toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
