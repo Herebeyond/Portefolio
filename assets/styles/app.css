@@ -1056,14 +1056,25 @@ ul {
 
 .timeline-dot {
     position: absolute;
-    left: -40px;
+    left: -48px;
     top: 6px;
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: var(--primary);
-    border: 3px solid var(--white);
+    background: #fff;
+    border: 2px solid var(--primary-light);
     box-shadow: 0 0 0 3px var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.timeline-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .timeline-content {
