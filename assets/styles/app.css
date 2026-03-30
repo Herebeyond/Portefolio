@@ -27,6 +27,177 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ========================================
+   DARK MODE
+   ======================================== */
+[data-theme="dark"] {
+    --gray-900: #f0f0f0;
+    --gray-800: #e0e0e0;
+    --gray-700: #c0c0c0;
+    --gray-600: #a0a0a0;
+    --gray-400: #555;
+    --gray-300: #444;
+    --gray-200: #333;
+    --gray-100: #121220;
+    --white: #1a1a2e;
+    --dark: #0d0d1a;
+    --dark-light: #12122a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(26, 26, 46, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(26, 26, 46, 0.95);
+}
+
+[data-theme="dark"] .nav-toggle span {
+    background: var(--gray-700);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--gray-700);
+}
+
+[data-theme="dark"] .nav-links {
+    background: var(--white);
+}
+
+[data-theme="dark"] .hero-content {
+    background: rgba(26, 26, 46, 0.92);
+}
+
+[data-theme="dark"] .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gray-700);
+}
+
+[data-theme="dark"] .social-link:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .certification-card {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .section-alt .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .section-alt .timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .timeline::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .timeline-dot {
+    border-color: var(--white);
+}
+
+[data-theme="dark"] .contact-form-col {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--gray-800);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .contact-icon {
+    background: rgba(108, 99, 255, 0.15);
+}
+
+[data-theme="dark"] .btn-outline {
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+[data-theme="dark"] .tag {
+    background: rgba(108, 99, 255, 0.2);
+}
+
+[data-theme="dark"] .interest-card,
+[data-theme="dark"] .highlight-card {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .project-img-placeholder {
+    opacity: 0.9;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--gray-300);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+    transform: rotate(20deg);
+}
+
+.theme-icon {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-icon--dark {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.theme-icon--light {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-icon--dark {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-icon--light {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
