@@ -1,0 +1,20 @@
+certifications:
+    - { icon: '☁️',  name: 'AWS',           subtitle: 'Amazon Web Services',  description: 'Certification cloud computing Amazon Web Services.' }
+    - { icon: '🔒',  name: 'ANSSI',         subtitle: 'Cybersécurité',        description: "Agence nationale de la sécurité des systèmes d'information." }
+    - { icon: '🖥️', name: 'Pix — Avancé 1', subtitle: 'Compétences numériques', description: 'Certification Pix niveau Avancé 1 en compétences numériques.' }
+
+# level: note sur 5 (entiers ou demi)
+languages:
+    - { name: PHP,         label: PHP,        bg: '#6C63FF', color: '#fff', level: 4 }
+    - { name: JavaScript,  label: JS,         bg: '#F7DF1E', color: '#000', level: 3 }
+    - { name: Python,      label: PY,         bg: '#3776AB', color: '#fff', level: 3 }
+    - { name: 'HTML / CSS', label: HTML,      bg: '#E34F26', color: '#fff', level: 4 }
+    - { name: SQL,         label: SQL,        bg: '#336791', color: '#fff', level: 4 }
+    - { name: 'C#',        label: 'C#',       bg: '#512BD4', color: '#fff', level: 3 }
+
+tools:
+    - { name: Symfony, label: SF,  bg: '#000000', color: '#fff', level: 3 }
+    - { name: Git,     label: GIT, bg: '#F05032', color: '#fff', level: 4 }
+    - { name: Docker,  label: DCK, bg: '#2496ED', color: '#fff', level: 3 }
+    - { name: MySQL,   label: MYS, bg: '#4479A1', color: '#fff', level: 4 }
+    - { name: 'VS Code', label: VS, bg: '#007ACC', color: '#fff', level: 4 }

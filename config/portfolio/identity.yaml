@@ -1,0 +1,21 @@
+name: Benjamin Baillard
+role: Étudiant en BTS SIO SLAM
+short_role: BTS SIO SLAM
+location: Limoges, France
+school: Lycée Beaupeyrat
+formation_year: 2ème année
+photo: images/photo.png
+github: https://github.com/Herebeyond
+linkedin: https://www.linkedin.com/in/benjamin-baillard-6031aa343
+description: |
+    Étudiant en deuxième année de BTS Services Informatiques aux Organisations,
+    option SLAM. Passionné par le développement de logiciels et la conception
+    de solutions applicatives.
+about:
+    - Ayant acquis une base solide en programmation et en gestion de bases de données, je souhaite approfondir mes compétences techniques tout en mettant en pratique mes connaissances lors de stages en entreprise.
+    - Doté d'une bonne capacité d'adaptation et d'une forte motivation, j'évolue volontiers dans un environnement stimulant et collaboratif. Adaptable, créatif, esprit critique et bon communicant.
+interests:
+    - { icon: '📚', title: Lecture, text: 'Passionné de littérature fantastique et de science-fiction.' }
+    - { icon: '🎮', title: 'Jeux vidéo', text: 'Amateur de RPG et de jeux de gestion.' }
+    - { icon: '✍️', title: Écriture, text: "Écriture de récits et création d'univers narratifs." }
+    - { icon: '🎵', title: Musique, text: "Principalement du métal, mais j'écoute un peu de tout." }

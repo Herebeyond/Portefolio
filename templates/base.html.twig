@@ -3,50 +3,106 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Portfolio — BTS SIO SLAM{% endblock %}</title>
+
+        {% set p = portfolio.identity %}
+        {% set page_title = block('title') is defined ? block('title') : 'Portfolio — BTS SIO SLAM' %}
+        {% set page_description = block('description') is defined ? block('description') : (p.description|default('Portfolio de ' ~ p.name|default('Benjamin Baillard') ~ ', étudiant en BTS SIO SLAM.'))|striptags|trim %}
+
+        <title>{{ page_title }}</title>
+        <meta name="description" content="{{ page_description }}">
+        <meta name="author" content="{{ p.name|default('Benjamin Baillard') }}">
+        <meta name="theme-color" content="#6C63FF" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1A1A2E" media="(prefers-color-scheme: dark)">
+        <meta name="color-scheme" content="light dark">
+        <link rel="canonical" href="{{ app.request.schemeAndHttpHost ~ app.request.pathInfo }}">
+
+        {# Open Graph / Twitter #}
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ page_title }}">
+        <meta property="og:description" content="{{ page_description }}">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ page_title }}">
+        <meta name="twitter:description" content="{{ page_description }}">
+
         <script>
             (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.setAttribute('data-theme','dark')})();
         </script>
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>💻</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-        {% block stylesheets %}
-        {% endblock %}
+
+        {# JSON-LD : Person #}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "{{ p.name|default('Benjamin Baillard') }}",
+            "jobTitle": "{{ p.role|default('Étudiant en BTS SIO SLAM') }}",
+            "address": { "@type": "PostalAddress", "addressLocality": "{{ p.location|default('Limoges, France') }}" },
+            "alumniOf": "{{ p.school|default('Lycée Beaupeyrat') }}",
+            "url": "{{ app.request.schemeAndHttpHost }}",
+            "sameAs": [
+                "{{ p.github|default('') }}",
+                "{{ p.linkedin|default('') }}"
+            ]
+        }
+        </script>
+
+        {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar">
+        <a class="skip-link" href="#main">Aller au contenu</a>
+
+        <nav class="navbar" aria-label="Navigation principale">
             <div class="nav-container">
                 <a href="{{ path('app_home') }}" class="nav-logo">
-                    Benjamin Baillard
+                    {{ p.name|default('Benjamin Baillard') }}
                 </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="{{ path('app_home') }}" class="{% if app.request.attributes.get('_route') == 'app_home' %}active{% endif %}">Présentation</a></li>
-                    <li><a href="{{ path('app_about') }}" class="{% if app.request.attributes.get('_route') == 'app_about' %}active{% endif %}">À propos</a></li>
-                    <li><a href="{{ path('app_skills') }}" class="{% if app.request.attributes.get('_route') == 'app_skills' %}active{% endif %}">Compétences</a></li>
-                    <li><a href="{{ path('app_projects') }}" class="{% if app.request.attributes.get('_route') == 'app_projects' %}active{% endif %}">Projets</a></li>
-                    <li><a href="{{ path('app_education') }}" class="{% if app.request.attributes.get('_route') == 'app_education' %}active{% endif %}">Formation</a></li>
-                    <li><a href="{{ path('app_veille') }}" class="{% if app.request.attributes.get('_route') == 'app_veille' %}active{% endif %}">Veille</a></li>
-                    <li><a href="{{ path('app_contact') }}" class="{% if app.request.attributes.get('_route') == 'app_contact' %}active{% endif %}">Contact</a></li>
+                    {% set route = app.request.attributes.get('_route') %}
+                    <li><a href="{{ path('app_home') }}"      class="{{ route == 'app_home'      ? 'active' }}">Présentation</a></li>
+                    <li><a href="{{ path('app_skills') }}"    class="{{ route == 'app_skills'    ? 'active' }}">Compétences</a></li>
+                    <li><a href="{{ path('app_projects') }}"  class="{{ route == 'app_projects'  ? 'active' }}">Projets</a></li>
+                    <li><a href="{{ path('app_education') }}" class="{{ route == 'app_education' ? 'active' }}">Formation</a></li>
+                    <li><a href="{{ path('app_veille') }}"    class="{{ route == 'app_veille'    ? 'active' }}">Veille</a></li>
                 </ul>
                 <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-                    <span class="theme-icon theme-icon--light">☀️</span>
-                    <span class="theme-icon theme-icon--dark">🌙</span>
+                    <span class="theme-icon theme-icon--light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon theme-icon--dark" aria-hidden="true">🌙</span>
                 </button>
             </div>
         </nav>
 
-        <main class="main-content">
+        <main class="main-content" id="main">
             {% block body %}{% endblock %}
         </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p class="footer-copy">© {{ "now"|date("Y") }} {{ p.name|default('Benjamin Baillard') }} — Tous droits réservés.</p>
+                <ul class="footer-links">
+                    {% if p.github|default(false) %}
+                        <li><a href="{{ p.github }}" target="_blank" rel="noopener" aria-label="Profil GitHub de {{ p.name }}">GitHub</a></li>
+                    {% endif %}
+                    {% if p.linkedin|default(false) %}
+                        <li><a href="{{ p.linkedin }}" target="_blank" rel="noopener" aria-label="Profil LinkedIn de {{ p.name }}">LinkedIn</a></li>
+                    {% endif %}
+                </ul>
+                <p class="footer-tech">Site réalisé avec <a href="https://symfony.com" target="_blank" rel="noopener">Symfony</a>.</p>
+            </div>
+        </footer>
     </body>
 </html>

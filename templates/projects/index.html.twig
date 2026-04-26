@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projets — Portfolio{% endblock %}
+{% block title %}Projets — Portfolio {{ portfolio.identity.name }}{% endblock %}
+{% block description %}Découvrez les projets réalisés par {{ portfolio.identity.name }} durant sa formation BTS SIO et en autonomie.{% endblock %}
 
 {% block body %}
 <section class="page-header">
@@ -13,97 +14,23 @@
 <section class="section">
     <div class="container">
         <div class="projects-grid">
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{{ asset('images/7f245e9b-0390-4db9-9cd9-6e7c5770c4ac.png') }}" alt="Phishing Manager">
-                </div>
-                <div class="project-info">
-                    <span class="project-context">Stage — CHU de Limoges</span>
-                    <h3>Outil de traitement des emails de phishing</h3>
-                    <p>Application de bureau permettant aux membres de la DSI de traiter efficacement et rapidement les emails de phishing reçus. L'application centralise toute la chaîne de traitement en s'interfaçant avec Exchange (récupération des mails), GLPI (gestion des tickets) et FortiMail (blocage des expéditeurs), le tout depuis une interface unique.</p>
-                    <div class="project-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">.NET</span>
-                        <span class="tag">Exchange</span>
-                        <span class="tag">GLPI</span>
-                        <span class="tag">FortiMail</span>
+            {% for project in portfolio.projects %}
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="{{ asset(project.image) }}" alt="{{ project.alt }}" loading="lazy" decoding="async">
                     </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{{ asset('images/0fe94857-f90f-407a-bf90-08b041d25ecf.png') }}" alt="Cartes de visite">
-                </div>
-                <div class="project-info">
-                    <span class="project-context">Stage — Rectorat de Limoges</span>
-                    <h3>Plateforme de gestion des cartes de visite</h3>
-                    <p>Site web couvrant l'intégralité de la chaîne de gestion des cartes de visite : réception et traitement des demandes, vérification de conformité, création et envoi des cartes, ainsi qu'un panneau d'administration complet. Mise à jour et refonte d'un site existant.</p>
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">SQL</span>
+                    <div class="project-info">
+                        <span class="project-context">{{ project.context }}</span>
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.description }}</p>
+                        <ul class="project-tags">
+                            {% for tag in project.tags %}
+                                <li class="tag">{{ tag }}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{{ asset('images/36018dda-cc7b-4926-91e5-4753d3446c8c.png') }}" alt="Course d'orientation">
-                </div>
-                <div class="project-info">
-                    <span class="project-context">Projet scolaire — BTS SIO, Beaupeyrat</span>
-                    <h3>Application de course d'orientation</h3>
-                    <p>Application web destinée aux professeurs d'établissements scolaires pour créer et gérer des courses d'orientation : placement des balises, gestion des élèves, suivi GPS en temps réel, enregistrement des temps, localisation des scans de balises. Projet collaboratif de classe sur 2 ans, avec une contribution personnelle importante.</p>
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">Symfony</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">GPS</span>
-                        <span class="tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{{ asset('images/istockphoto-1366379079-612x612.jpg') }}" alt="Greffe Rénale">
-                </div>
-                <div class="project-info">
-                    <span class="project-context">Projet scolaire — BTS SIO, Beaupeyrat</span>
-                    <h3>Plateforme de gestion de greffes rénales</h3>
-                    <p>Application médicale de gestion des transplantations rénales : dossiers patients, donneurs (vivants et décédés), greffes, résultats biologiques, consultations et éducation thérapeutique. Intègre un système de contrôle d'accès par rôles, le chiffrement des données sensibles, un journal d'audit complet et un mécanisme d'accès d'urgence (break-the-glass).</p>
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">Symfony 8</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Sécurité</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{{ asset('images/9cb42774-9a61-445b-abcc-183428c5ad09.png') }}" alt="Chronicles">
-                </div>
-                <div class="project-info">
-                    <span class="project-context">Projet personnel — En cours de développement</span>
-                    <h3>Chronicles — Gestionnaire d'univers fictif</h3>
-                    <p>Application web pour gérer un univers de fantasy : espèces, races et personnages organisés hiérarchiquement, système d'idées catégorisées, chronologie interactive avec calendrier personnalisé (360 jours), et carte du monde interactive avec points d'intérêt cliquables et galeries d'images. Repris de zéro à deux reprises pour évoluer techniquement : HTML pur → PHP → Symfony.</p>
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">Symfony</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">FrankenPHP</span>
-                    </div>
-                </div>
-            </div>
-
+                </article>
+            {% endfor %}
         </div>
     </div>
 </section>

@@ -1,0 +1,52 @@
+formations:
+    - period: '2024 — 2026'
+      title: 'BTS SIO — Option SLAM'
+      place: 'Lycée Beaupeyrat — Limoges'
+      logo: images/Beaupeyrat.png
+      alt: 'Lycée Beaupeyrat'
+      description: |
+          Solutions Logicielles et Applications Métiers. Formation axée sur le
+          développement d'applications, les bases de données, la cybersécurité
+          et la gestion de projets informatiques.
+
+    - period: '2022 — 2024'
+      title: 'Licence Informatique — 1ère année'
+      place: 'Université de Limoges'
+      logo: images/Université_de_Limoges.png
+      alt: 'Université de Limoges'
+      description: |
+          Première année de licence informatique. Approfondissement des bases
+          en algorithmique, programmation et mathématiques pour l'informatique.
+
+    - period: '2020 — 2022'
+      title: 'Classe préparatoire'
+      place: '3iL — Limoges'
+      logo: images/3il-ingenieurs.png
+      alt: '3iL Ingénieurs'
+      description: |
+          Classe préparatoire intégrée en école d'ingénieurs informatique.
+          Introduction aux fondamentaux de l'informatique et des sciences.
+
+experiences:
+    - period: 'Stage — BTS SIO'
+      title: 'Développeur logiciel — CHU de Limoges'
+      logo: images/Logo_du_CHU_de_Limoges.png
+      alt: 'CHU de Limoges'
+      description: |
+          Développer une application en C# permettant aux membres de la DSI
+          de traiter facilement, efficacement et rapidement tous les emails
+          de phishing reçus. L'application fait appel à Exchange, GLPI et
+          FortiMail afin que toute la chaîne de traitement puisse se faire
+          depuis l'application.
+      tags: [C#, .NET, Exchange, GLPI, FortiMail]
+
+    - period: 'Stage — BTS SIO'
+      title: 'Développeur web — Rectorat de Limoges'
+      logo: images/Academie_de_Limoges.png
+      alt: 'Académie de Limoges'
+      description: |
+          Mettre à jour et recréer un site web couvrant toute la chaîne de
+          remise de cartes de visite : réception et traitement des demandes,
+          vérification de leur conformité, création et envoi des cartes, ainsi
+          que la gestion administrateur.
+      tags: [PHP, HTML, CSS, JavaScript, SQL]

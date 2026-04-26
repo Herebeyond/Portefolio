@@ -1,0 +1,60 @@
+projects:
+    - context: 'Stage — CHU de Limoges'
+      title: 'Outil de traitement des emails de phishing'
+      image: images/7f245e9b-0390-4db9-9cd9-6e7c5770c4ac.png
+      alt: 'Phishing Manager'
+      description: |
+          Application de bureau permettant aux membres de la DSI de traiter
+          efficacement les emails de phishing reçus. Centralise toute la chaîne
+          de traitement en s'interfaçant avec Exchange (récupération des mails),
+          GLPI (gestion des tickets) et FortiMail (blocage des expéditeurs),
+          depuis une interface unique.
+      tags: [C#, .NET, Exchange, GLPI, FortiMail]
+
+    - context: 'Stage — Rectorat de Limoges'
+      title: 'Plateforme de gestion des cartes de visite'
+      image: images/0fe94857-f90f-407a-bf90-08b041d25ecf.png
+      alt: 'Cartes de visite'
+      description: |
+          Site web couvrant l'intégralité de la chaîne de gestion des cartes
+          de visite : réception et traitement des demandes, vérification de
+          conformité, création et envoi des cartes, panneau d'administration
+          complet. Mise à jour et refonte d'un site existant.
+      tags: [PHP, HTML, CSS, JavaScript, SQL]
+
+    - context: 'Projet scolaire — BTS SIO, Beaupeyrat'
+      title: "Application de course d'orientation"
+      image: images/36018dda-cc7b-4926-91e5-4753d3446c8c.png
+      alt: "Course d'orientation"
+      description: |
+          Application web destinée aux professeurs pour créer et gérer des
+          courses d'orientation : placement des balises, gestion des élèves,
+          suivi GPS en temps réel, enregistrement des temps, localisation des
+          scans. Projet collaboratif sur 2 ans avec une contribution
+          personnelle importante.
+      tags: [PHP, Symfony, JavaScript, GPS, MySQL]
+
+    - context: 'Projet scolaire — BTS SIO, Beaupeyrat'
+      title: 'Plateforme de gestion de greffes rénales'
+      image: images/istockphoto-1366379079-612x612.jpg
+      alt: 'Greffe Rénale'
+      description: |
+          Application médicale de gestion des transplantations rénales :
+          dossiers patients, donneurs (vivants et décédés), greffes, résultats
+          biologiques, consultations et éducation thérapeutique. Intègre un
+          contrôle d'accès par rôles, le chiffrement des données sensibles,
+          un journal d'audit et un mécanisme d'accès d'urgence (break-the-glass).
+      tags: [PHP, 'Symfony 7', PostgreSQL, Docker, Sécurité]
+
+    - context: 'Projet personnel — En cours de développement'
+      title: "Chronicles — Gestionnaire d'univers fictif"
+      image: images/9cb42774-9a61-445b-abcc-183428c5ad09.png
+      alt: 'Chronicles'
+      description: |
+          Application web pour gérer un univers de fantasy : espèces, races
+          et personnages organisés hiérarchiquement, système d'idées
+          catégorisées, chronologie interactive avec calendrier personnalisé
+          (360 jours), carte du monde interactive avec points d'intérêt
+          cliquables et galeries d'images. Repris de zéro à deux reprises
+          pour évoluer techniquement : HTML pur → PHP → Symfony.
+      tags: [PHP, Symfony, MySQL, Docker, FrankenPHP]

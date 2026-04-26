@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formation — Portfolio{% endblock %}
+{% block title %}Formation — Portfolio {{ portfolio.identity.name }}{% endblock %}
+{% block description %}Parcours scolaire et expériences professionnelles de {{ portfolio.identity.name }}.{% endblock %}
 
 {% block body %}
 <section class="page-header">
@@ -14,95 +15,46 @@
     <div class="container">
         <div class="formation-columns">
             <div class="formation-col">
-                <h2 class="col-title">📚 Formation</h2>
+                <h2 class="col-title"><span aria-hidden="true">📚</span> Formation</h2>
                 <div class="timeline">
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <img src="{{ asset('images/Beaupeyrat.png') }}" alt="Lycée Beaupeyrat" class="timeline-logo">
+                    {% for item in portfolio.formations %}
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">{{ item.period }}</div>
+                                <h3>{{ item.title }}</h3>
+                                <h4>{{ item.place }}</h4>
+                                <p>{{ item.description }}</p>
+                            </div>
                         </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2024 — 2026</div>
-                            <h3>BTS SIO — Option SLAM</h3>
-                            <h4>Lycée Beaupeyrat — Limoges</h4>
-                            <p>
-                                Solutions Logicielles et Applications Métiers. Formation axée sur le développement d'applications, les bases de données, la cybersécurité et la gestion de projets informatiques.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <img src="{{ asset('images/Universit%C3%A9_de_Limoges.png') }}" alt="Université de Limoges" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022 — 2024</div>
-                            <h3>Licence Informatique — 1ère année</h3>
-                            <h4>Université — Limoges</h4>
-                            <p>
-                                Première année de licence informatique. Approfondissement des bases en algorithmique, programmation et mathématiques pour l'informatique.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <img src="{{ asset('images/3il-ingenieurs.png') }}" alt="3iL Ingénieurs" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2020 — 2022</div>
-                            <h3>Classe préparatoire</h3>
-                            <h4>3iL — Limoges</h4>
-                            <p>
-                                Classe préparatoire intégrée en école d'ingénieurs informatique. Introduction aux fondamentaux de l'informatique et des sciences.
-                            </p>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
 
             <div class="formation-col">
-                <h2 class="col-title">💼 Stages & Expériences</h2>
+                <h2 class="col-title"><span aria-hidden="true">💼</span> Stages &amp; Expériences</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <img src="{{ asset('images/Logo_du_CHU_de_Limoges.png') }}" alt="CHU de Limoges" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Stage — BTS SIO</div>
-                            <h3>Développeur logiciel — CHU de Limoges</h3>
-                            <p>
-                                Développer une application en C# permettant aux membres de la DSI de traiter facilement, efficacement et rapidement tous les emails de phishing reçus. Cette application fait appel à Exchange, GLPI et FortiMail afin que toute la chaîne de traitement puisse se faire depuis l'application.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">C#</span>
-                                <span class="tag">.NET</span>
-                                <span class="tag">Exchange</span>
-                                <span class="tag">GLPI</span>
-                                <span class="tag">FortiMail</span>
+                    {% for item in portfolio.experiences %}
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">{{ item.period }}</div>
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.description }}</p>
+                                {% if item.tags is defined %}
+                                    <ul class="timeline-tags">
+                                        {% for tag in item.tags %}
+                                            <li class="tag">{{ tag }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <img src="{{ asset('images/Academie_de_Limoges.png') }}" alt="Académie de Limoges" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Stage — BTS SIO</div>
-                            <h3>Développeur web — Rectorat de Limoges</h3>
-                            <p>
-                                Mettre à jour et recréer un site web couvrant toute la chaîne de remise de cartes de visite : réception et traitement des demandes, vérification de leur conformité, création et envoi des cartes, ainsi que la gestion administrateur.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">PHP</span>
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">SQL</span>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

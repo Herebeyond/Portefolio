@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Compétences — Portfolio{% endblock %}
+{% block title %}Compétences — Portfolio {{ portfolio.identity.name }}{% endblock %}
+{% block description %}Technologies, langages, frameworks et certifications maîtrisés par {{ portfolio.identity.name }}.{% endblock %}
+
+{# Macro : barre de progression sur 5 #}
+{% macro level_bar(level, max) %}
+    {% set max = max|default(5) %}
+    {% set percent = (level / max * 100)|round %}
+    <div class="skill-bar" role="img" aria-label="Niveau : {{ level }} sur {{ max }}">
+        <span class="skill-bar-fill" style="width: {{ percent }}%;"></span>
+    </div>
+{% endmacro %}
+
+{% import _self as ui %}
 
 {% block body %}
 <section class="page-header">
@@ -14,24 +26,14 @@
     <div class="container">
         <h2 class="section-title">Mes <span class="highlight">certifications</span></h2>
         <div class="certifications-grid">
-            <div class="certification-card">
-                <div class="certification-icon">☁️</div>
-                <h3>AWS</h3>
-                <p class="certification-date">Amazon Web Services</p>
-                <p>Certification cloud computing Amazon Web Services.</p>
-            </div>
-            <div class="certification-card">
-                <div class="certification-icon">🔒</div>
-                <h3>ANSSI</h3>
-                <p class="certification-date">Cybersécurité</p>
-                <p>Agence nationale de la sécurité des systèmes d'information.</p>
-            </div>
-            <div class="certification-card">
-                <div class="certification-icon">🖥️</div>
-                <h3>Pix — Avancé 1</h3>
-                <p class="certification-date">Compétences numériques</p>
-                <p>Certification Pix niveau Avancé 1 en compétences numériques.</p>
-            </div>
+            {% for cert in portfolio.certifications %}
+                <div class="certification-card">
+                    <div class="certification-icon" aria-hidden="true">{{ cert.icon }}</div>
+                    <h3>{{ cert.name }}</h3>
+                    <p class="certification-date">{{ cert.subtitle }}</p>
+                    <p>{{ cert.description }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -40,70 +42,28 @@
     <div class="container">
         <h2 class="section-title">Langages de <span class="highlight">programmation</span></h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#6C63FF;">PHP</div>
-                <h3>PHP</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#F7DF1E;color:#000;">JS</div>
-                <h3>JavaScript</h3>
-                <div class="skill-stars">★★★★★★☆☆☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#3776AB;">PY</div>
-                <h3>Python</h3>
-                <div class="skill-stars">★★★★★★☆☆☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#E34F26;">HTML</div>
-                <h3>HTML / CSS</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#336791;">SQL</div>
-                <h3>SQL</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#512BD4;">C#</div>
-                <h3>C#</h3>
-                <div class="skill-stars">★★★★★★☆☆☆☆</div>
-            </div>
+            {% for s in portfolio.languages %}
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
+                    <h3>{{ s.name }}</h3>
+                    {{ ui.level_bar(s.level) }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
 
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Frameworks & <span class="highlight">Outils</span></h2>
+        <h2 class="section-title">Frameworks &amp; <span class="highlight">Outils</span></h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#000000;">SF</div>
-                <h3>Symfony</h3>
-                <div class="skill-stars">★★★★★★☆☆☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#F05032;">GIT</div>
-                <h3>Git</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#2496ED;">DCK</div>
-                <h3>Docker</h3>
-                <div class="skill-stars">★★★★★★☆☆☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#4479A1;">MYS</div>
-                <h3>MySQL</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon" style="background:#007ACC;">VS</div>
-                <h3>VS Code</h3>
-                <div class="skill-stars">★★★★★★★★☆☆</div>
-            </div>
-
+            {% for s in portfolio.tools %}
+                <div class="skill-card">
+                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
+                    <h3>{{ s.name }}</h3>
+                    {{ ui.level_bar(s.level) }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

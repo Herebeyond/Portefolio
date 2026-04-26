@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Veille Technologique — Portfolio{% endblock %}
+{% block title %}Veille technologique — Portfolio {{ portfolio.identity.name }}{% endblock %}
+{% block description %}Veille technologique de {{ portfolio.identity.name }} : recherches et découvertes sur les tendances du numérique.{% endblock %}
 
 {% block body %}
 <section class="page-header">
     <div class="container">
-        <h1 class="page-title">Veille <span class="highlight">Technologique</span></h1>
+        <h1 class="page-title">Veille <span class="highlight">technologique</span></h1>
         <p class="page-subtitle">Mes recherches et découvertes sur les tendances du numérique</p>
     </div>
 </section>
@@ -13,7 +14,7 @@
 <section class="section">
     <div class="container">
         <div class="coming-soon">
-            <span class="coming-soon-icon">🚧</span>
+            <span class="coming-soon-icon" aria-hidden="true">🚧</span>
             <h2 class="coming-soon-title">Prochainement</h2>
             <p class="coming-soon-text">Cette section est en cours de construction.</p>
         </div>
