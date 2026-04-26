@@ -15,9 +15,16 @@
     <div class="container">
         <div class="projects-grid">
             {% for project in portfolio.projects %}
-                <article class="project-card">
+                {% set has_details = project.details is defined and project.details %}
+                <article class="project-card{% if has_details %} project-card--clickable{% endif %}"
+                         {% if has_details %}role="button" tabindex="0" data-project-modal="project-modal-{{ loop.index }}" aria-haspopup="dialog"{% endif %}>
                     <div class="project-image">
                         <img src="{{ asset(project.image) }}" alt="{{ project.alt }}" loading="lazy" decoding="async">
+                        {% if has_details %}
+                            <div class="project-overlay" aria-hidden="true">
+                                <span class="project-overlay-text">Voir les détails</span>
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="project-info">
                         <span class="project-context">{{ project.context }}</span>
@@ -34,4 +41,42 @@
         </div>
     </div>
 </section>
+
+{# Project detail modals #}
+{% for project in portfolio.projects %}
+    {% if project.details is defined and project.details %}
+        {% set d = project.details %}
+        <div class="project-modal" id="project-modal-{{ loop.index }}" role="dialog" aria-modal="true" aria-labelledby="project-modal-title-{{ loop.index }}" hidden>
+            <div class="project-modal__backdrop" data-modal-close></div>
+            <div class="project-modal__dialog" role="document">
+                <button type="button" class="project-modal__close" aria-label="Fermer" data-modal-close>&times;</button>
+                <header class="project-modal__header">
+                    <span class="project-context">{{ project.context }}</span>
+                    <h2 id="project-modal-title-{{ loop.index }}">{{ project.title }}</h2>
+                </header>
+                <div class="project-modal__body">
+                    {% if d.intro is defined and d.intro %}
+                        <p class="project-modal__intro">{{ d.intro|nl2br }}</p>
+                    {% endif %}
+                    {% if d.thanks is defined and d.thanks %}
+                        <p class="project-modal__thanks">{{ d.thanks|nl2br }}</p>
+                    {% endif %}
+                    {% if d.bullets is defined and d.bullets %}
+                        <p class="project-modal__lead">L'application est composée de différentes pages afin de :</p>
+                        <ul class="project-modal__bullets">
+                            {% for bullet in d.bullets %}
+                                <li>{{ bullet }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <ul class="project-tags project-modal__tags">
+                        {% for tag in project.tags %}
+                            <li class="tag">{{ tag }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}

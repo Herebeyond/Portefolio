@@ -61,6 +61,55 @@ document.addEventListener('DOMContentLoaded', () => {
         onScroll();
     }
 
+    // Project details modal
+    const projectCards = document.querySelectorAll('[data-project-modal]');
+    let lastFocusedCard = null;
+
+    const openModal = (modal, trigger) => {
+        if (!modal) return;
+        lastFocusedCard = trigger || document.activeElement;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        const closeBtn = modal.querySelector('.project-modal__close');
+        if (closeBtn) closeBtn.focus();
+    };
+
+    const closeModal = (modal) => {
+        if (!modal || modal.hidden) return;
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+        if (lastFocusedCard && typeof lastFocusedCard.focus === 'function') {
+            lastFocusedCard.focus();
+        }
+    };
+
+    projectCards.forEach(card => {
+        const targetId = card.getAttribute('data-project-modal');
+        const modal = document.getElementById(targetId);
+        if (!modal) return;
+
+        card.addEventListener('click', () => openModal(modal, card));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(modal, card);
+            }
+        });
+    });
+
+    document.querySelectorAll('.project-modal').forEach(modal => {
+        modal.querySelectorAll('[data-modal-close]').forEach(el => {
+            el.addEventListener('click', () => closeModal(modal));
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const openOne = document.querySelector('.project-modal:not([hidden])');
+            if (openOne) closeModal(openOne);
+        }
+    });
+
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {

@@ -10,6 +10,19 @@ projects:
           GLPI (gestion des tickets) et FortiMail (blocage des expéditeurs),
           depuis une interface unique.
       tags: [C#, .NET, Exchange, GLPI, FortiMail]
+      details:
+          intro: |
+              Application de bureau en C# / .NET développée pendant mon stage au CHU de Limoges.
+              Elle s'interface avec Exchange pour récupérer les mails signalés, GLPI pour ouvrir
+              des tickets, et FortiMail pour bloquer les expéditeurs malveillants.
+          thanks: |
+              Je tiens à remercier tout particulièrement M. Fabien Bargue, mon maître de stage,
+              et toute l'équipe de la DSI pour leur soutien et leur aide tout au long du stage.
+          bullets:
+              - "Regrouper des fonctionnalités sur une seule application, comme la visualisation des tickets GLPI pour effectuer une recherche rapide des emails à supprimer."
+              - "Assurer la sécurité de l'application avec une identification et un cryptage des logs, uniquement lisibles depuis l'application."
+              - "Améliorer le confort utilisateur grâce à 8 pages de configurations pour automatiser des processus et assurer un bon fonctionnement même après mon départ."
+              - "Penser à d'éventuelles utilisations futures avec une page de statistiques et d'historique des suppressions."
 
     - context: 'Stage — Rectorat de Limoges'
       title: 'Plateforme de gestion des cartes de visite'
@@ -21,6 +34,22 @@ projects:
           conformité, création et envoi des cartes, panneau d'administration
           complet. Mise à jour et refonte d'un site existant.
       tags: [PHP, HTML, CSS, JavaScript, SQL]
+      details:
+          intro: |
+              Projet web réalisé au Rectorat de Limoges : une plateforme de gestion des cartes
+              de visite pour le personnel de l'Académie. Ma mission était de faire une refonte
+              complète d'un site existant, avec gestion des demandes, contrôle de conformité,
+              et un panneau d'administration complet.
+          thanks: |
+              Je tiens à remercier ma maîtresse de stage Madame Martine Lebreau,
+              M. Jean-Louis TANDOU, directeur du service, M. Philippe COMBET, directeur adjoint,
+              et toute l'équipe de la DSI pour leur encadrement et leurs conseils.
+          bullets:
+              - "Créer des templates de cartes."
+              - "Voir les demandes de cartes depuis une liste avec options de tri."
+              - "Être capable d'accepter ou refuser les demandes."
+              - "Visualiser les cartes afin de vérifier d'éventuels problèmes — tels que des noms trop longs qui débordent — et donc de corriger la carte en la rendant sur mesure."
+              - "Envoyer des emails automatiques avec toutes les cartes finalisées vers la section imprimerie, ainsi que des emails automatiques vers les demandeurs pour les tenir au courant de l'avancement de leur demande."
 
     - context: 'Projet scolaire — BTS SIO, Beaupeyrat'
       title: "Application de course d'orientation"
@@ -33,6 +62,18 @@ projects:
           scans. Projet collaboratif sur 2 ans avec une contribution
           personnelle importante.
       tags: [PHP, Symfony, JavaScript, GPS, MySQL]
+      details:
+          intro: |
+              Projet scolaire collaboratif réalisé en classe : une application web de course
+              d'orientation, à destination des professeurs et des élèves. J'ai personnellement
+              travaillé sur la partie front-end de l'interface destinée aux professeurs.
+          bullets:
+              - "Visualiser les parcours réalisés par chaque élève ou groupe sur une carte, à partir des coordonnées GPS récupérées à intervalles réguliers pendant la course et affichées sous forme de points reliés. Deux tableaux permettent en parallèle de consulter les performances individuelles de chaque participant."
+              - "Créer un parcours, en définissant son nom, sa description et le nombre de balises associées."
+              - "Gérer les parcours et les courses : comme les balises sont placées physiquement sur le terrain et leurs positions enregistrées depuis le téléphone, cette page permet de vérifier ou repositionner une balise en cas de problème, voire de la désactiver sur une course en particulier. À noter qu'un parcours correspond à la disposition des balises, tandis qu'une course est une session où les élèves font ce parcours — il peut donc y avoir plusieurs courses pour un même parcours."
+              - "Cloisonner les accès : chaque professeur ne peut consulter et modifier que les parcours qu'il a lui-même créés."
+              - "Gérer la plateforme côté administrateur, avec une page dédiée pour administrer les comptes des professeurs et intervenir sur les courses ou parcours en cas de problème."
+              - "S'adapter à un contexte multilingue : l'interface est entièrement traduite en français, anglais et basque au choix de l'utilisateur."
 
     - context: 'Projet scolaire — BTS SIO, Beaupeyrat'
       title: 'Plateforme de gestion de greffes rénales'
@@ -45,6 +86,20 @@ projects:
           contrôle d'accès par rôles, le chiffrement des données sensibles,
           un journal d'audit et un mécanisme d'accès d'urgence (break-the-glass).
       tags: [PHP, 'Symfony 7', PostgreSQL, Docker, Sécurité]
+      details:
+          intro: |
+              Plateforme de gestion de greffes rénales, composée d'une application web en
+              Symfony et d'une application mobile Flutter qui consomme son API. C'est un
+              domaine — le médical — avec de très fortes contraintes de sécurité, de
+              confidentialité et de traçabilité.
+          bullets:
+              - "La gestion des patients receveurs, des donneurs (vivants et décédés), des greffes, des consultations, des résultats biologiques, des antécédents médicaux et de l'éducation thérapeutique du patient."
+              - "Un contrôle d'accès fin par rôles (médecin, infirmier, coordinateur de transplantation, administrateur technique, super-administrateur), couplé à un système d'accès patient par patient : un médecin n'a pas accès à un dossier sans en avoir explicitement reçu l'autorisation, conformément à l'article L1110-4 du Code de la santé publique."
+              - "Le chiffrement au niveau du champ des données les plus sensibles, comme l'identité des donneurs vivants."
+              - "Un mécanisme d'urgence appelé break-the-glass : un soignant peut, en justifiant sa demande, accéder temporairement à un dossier hors de son périmètre."
+              - "Un journal d'audit complet qui trace chaque consultation, création, modification ou suppression, ainsi que les connexions, pour répondre aux exigences réglementaires."
+              - "Un historique des mots de passe empêchant leur réutilisation, et des sauvegardes incrémentales automatisées."
+              - "Une API REST sécurisée qui alimente l'application mobile Flutter. Celle-ci permet aux soignants en mobilité de consulter leurs patients, ajouter des consultations, joindre des fichiers et recevoir des notifications."
 
     - context: 'Projet personnel — En cours de développement'
       title: "Chronicles — Gestionnaire d'univers fictif"
@@ -58,3 +113,17 @@ projects:
           cliquables et galeries d'images. Repris de zéro à deux reprises
           pour évoluer techniquement : HTML pur → PHP → Symfony.
       tags: [PHP, Symfony, MySQL, Docker, FrankenPHP]
+      details:
+          intro: |
+              Chronicles, mon projet personnel en cours de développement. C'est une application
+              web destinée aux auteurs d'univers de fantasy — comme moi — pour centraliser
+              tout le travail de world-building. Ce projet a une histoire particulière :
+              je l'ai recommencé deux fois pour évoluer techniquement depuis ma première
+              année, en passant successivement par du HTML pur, puis PHP procédural, et
+              enfin Symfony.
+          bullets:
+              - "Une gestion hiérarchique des entités fictives : Espèces → Races → Personnages."
+              - "Un gestionnaire d'idées structuré, avec des catégories dynamiques (systèmes magiques, plans d'existence, divinités…), des hiérarchies parent-enfant, des niveaux de certitude et des statuts."
+              - "Une chronologie interactive affichée sous forme de timeline horizontale style frise chronologique, basée sur un calendrier personnalisable."
+              - "Une carte du monde interactive avec plusieurs cartes possibles, des points d'intérêt cliquables typés (ville, temple, donjon, forêt…), un éditeur d'admin permettant de placer ou déplacer les points en drag-and-drop sur la carte, et des fiches lieux façon Wikipedia avec galeries d'images."
+              - "Un système d'utilisateurs et de rôles complet (utilisateur, modérateur, admin, super-admin), avec gestion des comptes, avatars et profils."
