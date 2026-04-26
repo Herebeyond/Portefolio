@@ -14,6 +14,7 @@ languages:
 
 tools:
     - { name: Symfony, label: SF,  bg: '#000000', color: '#fff', level: 3 }
+    - { name: Flutter, label: FLT, bg: '#02569B', color: '#fff', level: 3 }
     - { name: Git,     label: GIT, bg: '#F05032', color: '#fff', level: 4 }
     - { name: Docker,  label: DCK, bg: '#2496ED', color: '#fff', level: 3 }
     - { name: MySQL,   label: MYS, bg: '#4479A1', color: '#fff', level: 4 }
