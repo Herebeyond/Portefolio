@@ -11,6 +11,7 @@ languages:
     - { name: 'HTML / CSS', label: HTML,      bg: '#E34F26', color: '#fff', level: 4 }
     - { name: SQL,         label: SQL,        bg: '#336791', color: '#fff', level: 4 }
     - { name: 'C#',        label: 'C#',       bg: '#512BD4', color: '#fff', level: 3 }
+    - { name: Dart,        label: DRT,        bg: '#0175C2', color: '#fff', level: 3 }
 
 tools:
     - { name: Symfony, label: SF,  bg: '#000000', color: '#fff', level: 3 }
@@ -19,3 +20,16 @@ tools:
     - { name: Docker,  label: DCK, bg: '#2496ED', color: '#fff', level: 3 }
     - { name: MySQL,   label: MYS, bg: '#4479A1', color: '#fff', level: 4 }
     - { name: 'VS Code', label: VS, bg: '#007ACC', color: '#fff', level: 4 }
+    - { name: PostgreSQL, label: PGS, bg: '#336791', color: '#fff', level: 3 }
+
+office_tools:
+    - { name: Excel,      label: XLS, bg: '#217346', color: '#fff', level: 4 }
+    - { name: Word,       label: DOC, bg: '#185ABD', color: '#fff', level: 4 }
+    - { name: PowerPoint, label: PPT, bg: '#D24726', color: '#fff', level: 4 }
+    - { name: Outlook,    label: OUT, bg: '#0078D4', color: '#fff', level: 3 }
+
+soft_skills:
+    - { name: "Analyse de problématique", label: ANA, bg: '#374151', color: '#fff', level: 4 }
+    - { name: Créativité, label: CRÉ, bg: '#D97706', color: '#fff', level: 4 }
+    - { name: Adaptable, label: ADP, bg: '#0F766E', color: '#fff', level: 4 }
+    - { name: 'Esprit critique', label: CRT, bg: '#7C3AED', color: '#fff', level: 4 }

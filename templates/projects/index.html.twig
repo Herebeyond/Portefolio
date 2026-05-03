@@ -35,6 +35,13 @@
                                 <li class="tag">{{ tag }}</li>
                             {% endfor %}
                         </ul>
+                        {% if project.github_links is defined and project.github_links %}
+                            <div class="project-links">
+                                {% for link in project.github_links %}
+                                    <a href="{{ link.url }}" class="btn btn-outline btn-sm project-link-btn" target="_blank" rel="noopener">{{ link.label }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                 </article>
             {% endfor %}
@@ -74,6 +81,13 @@
                             <li class="tag">{{ tag }}</li>
                         {% endfor %}
                     </ul>
+                    {% if project.github_links is defined and project.github_links %}
+                        <div class="project-links project-modal__links">
+                            {% for link in project.github_links %}
+                                <a href="{{ link.url }}" class="btn btn-outline btn-sm project-link-btn" target="_blank" rel="noopener">{{ link.label }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

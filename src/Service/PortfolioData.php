@@ -59,6 +59,18 @@ final class PortfolioData
         return $this->load('skills')['tools'] ?? [];
     }
 
+    /** @return list<array<string, mixed>> */
+    public function getOfficeTools(): array
+    {
+        return $this->load('skills')['office_tools'] ?? [];
+    }
+
+    /** @return list<array<string, mixed>> */
+    public function getSoftSkills(): array
+    {
+        return $this->load('skills')['soft_skills'] ?? [];
+    }
+
     /** @return array<string, mixed> */
     private function load(string $name): array
     {

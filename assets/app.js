@@ -88,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById(targetId);
         if (!modal) return;
 
-        card.addEventListener('click', () => openModal(modal, card));
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a, button')) return;
+            openModal(modal, card);
+        });
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();

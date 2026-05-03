@@ -62,6 +62,9 @@ projects:
           scans. Projet collaboratif sur 2 ans avec une contribution
           personnelle importante.
       tags: [PHP, Symfony, JavaScript, GPS, MySQL]
+      github_links:
+          - { label: 'GitHub (Web)', url: 'https://github.com/Yes-lan/e-CO-web' }
+          - { label: 'GitHub (Mobile - non réalisé par moi)', url: 'https://github.com/Yes-lan/e-CO_Mobile' }
       details:
           intro: |
               Projet scolaire collaboratif réalisé en classe : une application web de course
@@ -86,6 +89,9 @@ projects:
           contrôle d'accès par rôles, le chiffrement des données sensibles,
           un journal d'audit et un mécanisme d'accès d'urgence (break-the-glass).
       tags: [PHP, 'Symfony 7', PostgreSQL, Docker, Sécurité]
+      github_links:
+          - { label: 'GitHub (Web)', url: 'https://github.com/Herebeyond/Greffe' }
+          - { label: 'GitHub (Mobile)', url: 'https://github.com/Herebeyond/Greffe_Mobile' }
       details:
           intro: |
               Plateforme de gestion de greffes rénales, composée d'une application web en
@@ -113,6 +119,8 @@ projects:
           cliquables et galeries d'images. Repris de zéro à deux reprises
           pour évoluer techniquement : HTML pur → PHP → Symfony.
       tags: [PHP, Symfony, MySQL, Docker, FrankenPHP]
+      github_links:
+          - { label: 'GitHub (Web)', url: 'https://github.com/Herebeyond/Chronicles' }
       details:
           intro: |
               Chronicles, mon projet personnel en cours de développement. C'est une application
