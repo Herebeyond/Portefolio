@@ -625,7 +625,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         channel_policy?: array<string, string|list<scalar|Param|null>>,
  *         admin_recipients?: list<array{ // Default: []
  *             email?: scalar|Param|null,
- *             phone?: scalar|Param|null, // Default: ""
  *         }>,
  *     },
  *     rate_limiter?: bool|array{ // Rate limiter configuration

@@ -85,8 +85,7 @@ git add -A && git commit -m "description du changement" && git push
 ### Sur Alwaysdata (en SSH)
 
 ```bash
-cd www
-git pull && composer install --no-dev --optimize-autoloader && php bin/console importmap:install && php bin/console asset-map:compile && php bin/console cache:clear --env=prod
+cd www && git pull && composer install --no-dev --optimize-autoloader && php bin/console importmap:install && php bin/console asset-map:compile && php bin/console cache:clear --env=prod
 ```
 
 ### Mise à jour rapide (templates Twig ou CSS/JS uniquement)
