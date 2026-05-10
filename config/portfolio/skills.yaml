@@ -26,7 +26,9 @@ office_tools:
     - { name: Excel,      label: XLS, bg: '#217346', color: '#fff', level: 4 }
     - { name: Word,       label: DOC, bg: '#185ABD', color: '#fff', level: 4 }
     - { name: PowerPoint, label: PPT, bg: '#D24726', color: '#fff', level: 4 }
-    - { name: Outlook,    label: OUT, bg: '#0078D4', color: '#fff', level: 3 }
+    - { name: Obsidian,   label: OBS, bg: '#4B286D', color: '#fff', level: 4 }
+    - { name: Thunderbird, label: THB, bg: '#0A84FF', color: '#fff', level: 3 }
+    - { name: Visual Studio Code, label: VSC, bg: '#007ACC', color: '#fff', level: 4 }
 
 soft_skills:
     - { name: "Analyse de problématique", label: ANA, bg: '#374151', color: '#fff', level: 4 }
