@@ -89,9 +89,7 @@
         <div class="skills-grid">
             {% for s in portfolio.softSkills %}
                 <div class="skill-card">
-                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
                     <h3>{{ s.name }}</h3>
-                    {{ ui.level_bar(s.level) }}
                 </div>
             {% endfor %}
         </div>
