@@ -18,6 +18,8 @@
             <h2 class="section-title">Introduction</h2>
             <p>Le phishing, aussi appelé hameçonnage, est une technique de cyberattaque visant à tromper un utilisateur afin d'obtenir des informations sensibles : identifiants, mots de passe, données bancaires ou accès internes à une entreprise.</p>
             <p>Avec l'arrivée des intelligences artificielles génératives, les campagnes deviennent plus crédibles et plus difficiles à détecter. Cette veille met en perspective les tendances récentes, les limites de la détection automatique et les enjeux opérationnels rencontrés en milieu professionnel.</p>
+            <p>L'objectif n'est pas seulement de définir la menace, mais d'analyser son impact réel sur une organisation : charge pour la DSI, risques de compromission de comptes, interruption de service, et perte de confiance des utilisateurs.</p>
+            <p>Dans un contexte hospitalier comme le CHU de Limoges, ces enjeux sont encore plus critiques car la disponibilité des outils métiers et la fiabilité des communications conditionnent directement la continuité des soins.</p>
         </article>
 
         <article class="veille-section-card">
@@ -31,6 +33,9 @@
                     <p>Le phishing repose principalement sur l'ingénierie sociale. L'attaquant cherche à provoquer une réaction rapide en jouant sur l'urgence, la peur, l'autorité ou la curiosité.</p>
                     <p>Les emails frauduleux contiennent souvent un lien vers un faux site, une pièce jointe malveillante ou une demande d'informations confidentielles.</p>
                     <p>Les formulations alarmantes comme « votre compte va être suspendu » ou « connexion inhabituelle » visent à pousser la victime à agir sans vérifier la légitimité du message.</p>
+                    <p>Une campagne suit souvent la même chaîne d'attaque : préparation du scénario, envoi massif ou ciblé, vol de données, puis exploitation des accès obtenus. Même un seul clic peut suffire à compromettre un compte si l'utilisateur saisit ses identifiants sur une page clonée.</p>
+                    <p>Le phishing ne vise pas uniquement les données bancaires. En entreprise, les attaquants recherchent surtout des accès aux boîtes mail, aux outils cloud et aux workflows de validation pour rebondir ensuite vers des fraudes plus importantes.</p>
+                    <p>Comprendre ce mécanisme est essentiel pour la défense : plus une équipe connaît les déclencheurs psychologiques utilisés par l'attaquant, plus elle peut concevoir des messages de sensibilisation efficaces et des procédures de signalement rapides.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 1">
                     <span class="media-slot-label">Image 1B</span>
@@ -50,8 +55,12 @@
                     <h4>2.1 Le phishing assisté par intelligence artificielle</h4>
                     <p>Les modèles génératifs permettent désormais de produire des messages bien rédigés, contextualisés et crédibles. Les erreurs grossières d'autrefois deviennent plus rares.</p>
                     <p>Des rapports récents indiquent une forte augmentation des campagnes pilotées par IA et un volume massif de clics malveillants bloqués.</p>
+                    <p>Un changement majeur est la personnalisation à grande échelle : un attaquant peut générer des variantes par métier, par service ou par langue, ce qui augmente fortement le taux de crédibilité perçu.</p>
+                    <p>L'IA permet aussi d'industrialiser la phase de test. Les cybercriminels adaptent rapidement l'objet, le ton et la structure des messages en fonction des retours de campagne.</p>
                     <h4>2.2 Les nouvelles méthodes d'attaque</h4>
                     <p>Les attaquants utilisent des faux domaines, des QR codes piégés, des invitations Teams/Outlook authentifiées, des deepfakes vocaux et des pages de connexion clonées.</p>
+                    <p>Le quishing (QR phishing) contourne souvent les protections classiques de messagerie : l'URL malveillante n'est pas visible immédiatement dans le texte du mail et l'action se déplace sur mobile, où l'analyse de l'adresse est moins intuitive.</p>
+                    <p>On observe aussi davantage d'abus d'infrastructures légitimes (Microsoft 365, partages cloud, services de formulaire), ce qui rend la détection plus complexe car la réputation du domaine est initialement bonne.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 2">
                     <span class="media-slot-label">Image 2B</span>
@@ -70,10 +79,15 @@
                     <h3>3. Les méthodes de détection du phishing</h3>
                     <h4>3.1 Les protections techniques</h4>
                     <p>SPF, DKIM et DMARC restent les bases pour réduire l'usurpation d'identité et valider l'authenticité des emails.</p>
+                    <p>Ces mécanismes ne bloquent pas tous les scénarios, mais ils réduisent fortement les usurpations directes de domaine. Leur efficacité dépend d'une configuration rigoureuse et d'un suivi régulier des politiques publiées.</p>
                     <h4>3.2 Les filtres intelligents</h4>
                     <p>Les solutions modernes combinent analyse comportementale, machine learning, réputation des URL, analyse de contenu et sandboxing des pièces jointes.</p>
+                    <p>Les moteurs actuels croisent plusieurs signaux : structure du mail, historique d'échanges, cohérence expéditeur-domaine, anomalies de routage et comportements utilisateurs après réception.</p>
+                    <p>Les recherches récentes sur les campagnes obfusquées montrent l'intérêt d'une détection multimodale capable d'analyser à la fois le texte, les images intégrées, le code HTML et les pièces jointes complexes.</p>
                     <h4>3.3 Les limites de l'automatisation</h4>
                     <p>Les faux positifs, les campagnes inédites et les attaques très contextuelles montrent qu'une validation humaine reste indispensable dans les cas sensibles.</p>
+                    <p>Un filtre trop agressif dégrade la productivité (emails légitimes bloqués), tandis qu'un filtre trop permissif laisse passer des menaces. L'arbitrage entre sécurité et usage reste donc un enjeu de gouvernance.</p>
+                    <p>La meilleure approche en pratique est hybride : filtrage automatique en première ligne, puis qualification humaine sur les alertes à forte incertitude ou à impact métier élevé.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 3">
                     <span class="media-slot-label">Image 3B</span>
@@ -92,6 +106,9 @@
                     <h3>4. La gestion des signalements en entreprise</h3>
                     <p>Le traitement d'un email suspect inclut l'analyse du message, la vérification des liens/pièces jointes, l'identification des destinataires et la suppression globale des messages malveillants.</p>
                     <p>Dans les grandes structures, la volumétrie quotidienne peut ralentir la réponse et augmenter le temps d'exposition.</p>
+                    <p>La performance opérationnelle se mesure surtout en délai : temps de qualification, temps de décision, temps de suppression globale et temps d'information des utilisateurs exposés.</p>
+                    <p>Sans centralisation, les équipes perdent du temps entre plusieurs canaux de remontée. Un workflow clair (signalement, triage, investigation, containment, communication) réduit les frictions et améliore la traçabilité des actions.</p>
+                    <p>Ce point est stratégique pour un SOC ou une DSI : plus le cycle de traitement est court, plus l'impact d'une campagne active est réduit.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 4">
                     <span class="media-slot-label">Image 4B</span>
@@ -111,6 +128,9 @@
                     <p>Lors de mon stage, j'ai participé au développement d'un outil pour accélérer le traitement des emails de phishing signalés à la DSI.</p>
                     <p>L'objectif était de centraliser les signalements, simplifier les actions des administrateurs et réduire le délai d'exposition des utilisateurs aux campagnes actives.</p>
                     <p>Ce retour d'expérience montre que l'efficacité dépend autant de l'organisation interne que des briques techniques.</p>
+                    <p>Avant l'outil, une partie du temps était consommée par des tâches répétitives : collecte des signalements, vérifications manuelles successives et coordination entre intervenants. La centralisation améliore immédiatement la vision globale d'une campagne.</p>
+                    <p>Le gain principal n'est pas seulement technique, il est décisionnel : une DSI qui dispose d'informations consolidées peut prioriser plus vite les incidents réellement dangereux et lancer des actions de containment plus tôt.</p>
+                    <p>Cette étude de cas illustre bien qu'en cybersécurité, la valeur d'un logiciel se mesure par son impact opérationnel : temps gagné, erreurs réduites, meilleure coordination et meilleure protection des utilisateurs finaux.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 5">
                     <span class="media-slot-label">Image 5B</span>
@@ -129,6 +149,9 @@
                     <h3>6. La sensibilisation des utilisateurs</h3>
                     <p>Même avec des protections avancées, l'utilisateur reste une cible prioritaire. Les bonnes pratiques (MFA, vérification de l'expéditeur, prudence face à l'urgence) sont essentielles.</p>
                     <p>Les simulations de phishing et les formations doivent évoluer pour suivre des attaques désormais enrichies par l'IA générative.</p>
+                    <p>La sensibilisation efficace repose sur la répétition et le contexte. Des messages courts, ancrés dans des situations réelles de l'organisation, sont souvent plus utiles que des formations théoriques trop générales.</p>
+                    <p>Les campagnes modernes doivent intégrer les nouveaux vecteurs : QR codes, collaboration en ligne, demandes inhabituelles via outils de messagerie interne, et scénarios de fraude au président.</p>
+                    <p>L'objectif final est de créer un réflexe collectif : douter, vérifier, signaler rapidement. La sécurité devient alors une pratique quotidienne partagée, pas seulement une contrainte technique.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la partie 6">
                     <span class="media-slot-label">Image 6B</span>
@@ -147,6 +170,8 @@
                     <h3>Conclusion</h3>
                     <p>Le phishing reste l'une des menaces majeures en cybersécurité. Les entreprises doivent combiner protections techniques, automatisation, supervision humaine et culture de vigilance.</p>
                     <p>L'expérience du CHU de Limoges souligne un enjeu clé : améliorer le traitement opérationnel des signalements pour réduire rapidement l'impact des campagnes malveillantes.</p>
+                    <p>À court terme, les priorités sont claires : renforcer les configurations de sécurité mail, fiabiliser le workflow de traitement et maintenir une sensibilisation continue des utilisateurs.</p>
+                    <p>À moyen terme, l'apport de l'IA dans la défense devra être piloté avec méthode : amélioration de la détection, réduction du bruit d'alerte et meilleure assistance à la décision pour les équipes IT et sécurité.</p>
                 </div>
                 <aside class="media-slot media-slot--right" aria-label="Bloc image droite de la conclusion">
                     <span class="media-slot-label">Image C2</span>
