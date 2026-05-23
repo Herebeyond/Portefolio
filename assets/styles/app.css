@@ -2301,7 +2301,7 @@ html:not([data-theme="dark"]) .page-subtitle {
     height: 220px;
     top: 8%;
     left: -40px;
-    background: radial-gradient(circle at 30% 30%, rgba(90, 170, 255, 0.85), rgba(90, 170, 255, 0.25));
+    background: radial-gradient(circle at 30% 30%, rgba(74, 176, 255, 0.88), rgba(74, 176, 255, 0.27));
     animation-name: orbFloatOne;
     animation-duration: 42s;
 }
@@ -2311,7 +2311,7 @@ html:not([data-theme="dark"]) .page-subtitle {
     height: 320px;
     top: 32%;
     right: -120px;
-    background: radial-gradient(circle at 40% 40%, rgba(255, 111, 169, 0.7), rgba(255, 111, 169, 0.2));
+    background: radial-gradient(circle at 40% 40%, rgba(255, 96, 166, 0.72), rgba(255, 96, 166, 0.22));
     animation-name: orbFloatTwo;
     animation-duration: 58s;
 }
@@ -2321,7 +2321,7 @@ html:not([data-theme="dark"]) .page-subtitle {
     height: 180px;
     bottom: 18%;
     left: 12%;
-    background: radial-gradient(circle at 30% 30%, rgba(123, 99, 255, 0.7), rgba(123, 99, 255, 0.2));
+    background: radial-gradient(circle at 30% 30%, rgba(118, 84, 255, 0.72), rgba(118, 84, 255, 0.22));
     animation-name: orbFloatThree;
     animation-duration: 46s;
 }
@@ -2331,9 +2331,29 @@ html:not([data-theme="dark"]) .page-subtitle {
     height: 260px;
     bottom: -80px;
     right: 8%;
-    background: radial-gradient(circle at 35% 35%, rgba(89, 211, 178, 0.65), rgba(89, 211, 178, 0.2));
+    background: radial-gradient(circle at 35% 35%, rgba(74, 214, 175, 0.68), rgba(74, 214, 175, 0.22));
     animation-name: orbFloatFour;
     animation-duration: 64s;
+}
+
+.veille-orb--five {
+    width: 140px;
+    height: 140px;
+    top: 62%;
+    left: 40%;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 163, 82, 0.6), rgba(255, 163, 82, 0.2));
+    animation-name: orbFloatFive;
+    animation-duration: 52s;
+}
+
+.veille-orb--six {
+    width: 170px;
+    height: 170px;
+    top: 14%;
+    right: 22%;
+    background: radial-gradient(circle at 35% 35%, rgba(220, 110, 255, 0.58), rgba(220, 110, 255, 0.2));
+    animation-name: orbFloatSix;
+    animation-duration: 60s;
 }
 
 @keyframes orbFloatOne {
@@ -2354,6 +2374,16 @@ html:not([data-theme="dark"]) .page-subtitle {
 @keyframes orbFloatFour {
     from { transform: translate(0, 0); }
     to { transform: translate(-100px, -80px); }
+}
+
+@keyframes orbFloatFive {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-70px, 40px); }
+}
+
+@keyframes orbFloatSix {
+    from { transform: translate(0, 0); }
+    to { transform: translate(85px, 52px); }
 }
 
 .veille-intro-card,
