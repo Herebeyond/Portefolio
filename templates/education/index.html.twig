@@ -11,53 +11,76 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="formation-columns">
-            <div class="formation-col">
-                <h2 class="col-title"><span aria-hidden="true">📚</span> Formation</h2>
-                <div class="timeline">
-                    {% for item in portfolio.formations %}
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">{{ item.period }}</div>
-                                <h3>{{ item.title }}</h3>
-                                <h4>{{ item.place }}</h4>
-                                <p>{{ item.description }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
+<div class="page-orb-bg">
+    <div class="veille-orbs" aria-hidden="true">
+        <span class="veille-orb veille-orb--one"></span>
+        <span class="veille-orb veille-orb--two"></span>
+        <span class="veille-orb veille-orb--three"></span>
+        <span class="veille-orb veille-orb--four"></span>
+        <span class="veille-orb veille-orb--five"></span>
+        <span class="veille-orb veille-orb--six"></span>
+        <span class="veille-orb veille-orb--seven"></span>
+        <span class="veille-orb veille-orb--eight"></span>
+        <span class="veille-orb veille-orb--nine"></span>
+        <span class="veille-orb veille-orb--ten"></span>
+        <span class="veille-orb veille-orb--eleven"></span>
+        <span class="veille-orb veille-orb--twelve"></span>
+        <span class="veille-orb veille-orb--thirteen"></span>
+        <span class="veille-orb veille-orb--fourteen"></span>
+        <span class="veille-orb veille-orb--fifteen"></span>
+        <span class="veille-orb veille-orb--sixteen"></span>
+        <span class="veille-orb veille-orb--seventeen"></span>
+        <span class="veille-orb veille-orb--eighteen"></span>
+    </div>
 
-            <div class="formation-col">
-                <h2 class="col-title"><span aria-hidden="true">💼</span> Stages &amp; Expériences</h2>
-                <div class="timeline">
-                    {% for item in portfolio.experiences %}
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
+    <section class="section">
+        <div class="container">
+            <div class="formation-columns">
+                <div class="formation-col">
+                    <h2 class="col-title"><span aria-hidden="true">📚</span> Formation</h2>
+                    <div class="timeline">
+                        {% for item in portfolio.formations %}
+                            <div class="timeline-item">
+                                <div class="timeline-dot">
+                                    <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">{{ item.period }}</div>
+                                    <h3>{{ item.title }}</h3>
+                                    <h4>{{ item.place }}</h4>
+                                    <p>{{ item.description }}</p>
+                                </div>
                             </div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">{{ item.period }}</div>
-                                <h3>{{ item.title }}</h3>
-                                <p>{{ item.description }}</p>
-                                {% if item.tags is defined %}
-                                    <ul class="timeline-tags">
-                                        {% for tag in item.tags %}
-                                            <li class="tag">{{ tag }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="formation-col">
+                    <h2 class="col-title"><span aria-hidden="true">💼</span> Stages &amp; Expériences</h2>
+                    <div class="timeline">
+                        {% for item in portfolio.experiences %}
+                            <div class="timeline-item">
+                                <div class="timeline-dot">
+                                    <img src="{{ asset(item.logo) }}" alt="{{ item.alt }}" class="timeline-logo" loading="lazy" decoding="async" width="60" height="60">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">{{ item.period }}</div>
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.description }}</p>
+                                    {% if item.tags is defined %}
+                                        <ul class="timeline-tags">
+                                            {% for tag in item.tags %}
+                                                <li class="tag">{{ tag }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 {% endblock %}

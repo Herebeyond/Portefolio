@@ -11,43 +11,66 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="projects-grid">
-            {% for project in portfolio.projects %}
-                {% set has_details = project.details is defined and project.details %}
-                <article class="project-card{% if has_details %} project-card--clickable{% endif %}"
-                         {% if has_details %}role="button" tabindex="0" data-project-modal="project-modal-{{ loop.index }}" aria-haspopup="dialog"{% endif %}>
-                    <div class="project-image">
-                        <img src="{{ asset(project.image) }}" alt="{{ project.alt }}" loading="lazy" decoding="async">
-                        {% if has_details %}
-                            <div class="project-overlay" aria-hidden="true">
-                                <span class="project-overlay-text">Voir les détails</span>
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="project-info">
-                        <span class="project-context">{{ project.context }}</span>
-                        <h2>{{ project.title }}</h2>
-                        <p>{{ project.description }}</p>
-                        <ul class="project-tags">
-                            {% for tag in project.tags %}
-                                <li class="tag">{{ tag }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% if project.github_links is defined and project.github_links %}
-                            <div class="project-links">
-                                {% for link in project.github_links %}
-                                    <a href="{{ link.url }}" class="btn btn-outline btn-sm project-link-btn" target="_blank" rel="noopener">{{ link.label }}</a>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
+<div class="page-orb-bg">
+    <div class="veille-orbs" aria-hidden="true">
+        <span class="veille-orb veille-orb--one"></span>
+        <span class="veille-orb veille-orb--two"></span>
+        <span class="veille-orb veille-orb--three"></span>
+        <span class="veille-orb veille-orb--four"></span>
+        <span class="veille-orb veille-orb--five"></span>
+        <span class="veille-orb veille-orb--six"></span>
+        <span class="veille-orb veille-orb--seven"></span>
+        <span class="veille-orb veille-orb--eight"></span>
+        <span class="veille-orb veille-orb--nine"></span>
+        <span class="veille-orb veille-orb--ten"></span>
+        <span class="veille-orb veille-orb--eleven"></span>
+        <span class="veille-orb veille-orb--twelve"></span>
+        <span class="veille-orb veille-orb--thirteen"></span>
+        <span class="veille-orb veille-orb--fourteen"></span>
+        <span class="veille-orb veille-orb--fifteen"></span>
+        <span class="veille-orb veille-orb--sixteen"></span>
+        <span class="veille-orb veille-orb--seventeen"></span>
+        <span class="veille-orb veille-orb--eighteen"></span>
     </div>
-</section>
+
+    <section class="section">
+        <div class="container">
+            <div class="projects-grid">
+                {% for project in portfolio.projects %}
+                    {% set has_details = project.details is defined and project.details %}
+                    <article class="project-card{% if has_details %} project-card--clickable{% endif %}"
+                             {% if has_details %}role="button" tabindex="0" data-project-modal="project-modal-{{ loop.index }}" aria-haspopup="dialog"{% endif %}>
+                        <div class="project-image">
+                            <img src="{{ asset(project.image) }}" alt="{{ project.alt }}" loading="lazy" decoding="async">
+                            {% if has_details %}
+                                <div class="project-overlay" aria-hidden="true">
+                                    <span class="project-overlay-text">Voir les détails</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="project-info">
+                            <span class="project-context">{{ project.context }}</span>
+                            <h2>{{ project.title }}</h2>
+                            <p>{{ project.description }}</p>
+                            <ul class="project-tags">
+                                {% for tag in project.tags %}
+                                    <li class="tag">{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% if project.github_links is defined and project.github_links %}
+                                <div class="project-links">
+                                    {% for link in project.github_links %}
+                                        <a href="{{ link.url }}" class="btn btn-outline btn-sm project-link-btn" target="_blank" rel="noopener">{{ link.label }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
 
 {# Project detail modals #}
 {% for project in portfolio.projects %}

@@ -2274,7 +2274,21 @@ html:not([data-theme="dark"]) .page-subtitle {
         radial-gradient(circle at 95% 80%, rgba(255, 101, 132, 0.1), transparent 42%);
 }
 
+.page-orb-bg {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 5% 20%, rgba(108, 99, 255, 0.08), transparent 38%),
+        radial-gradient(circle at 95% 80%, rgba(255, 101, 132, 0.1), transparent 42%);
+}
+
 .veille-page > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-orb-bg > section,
+.page-orb-bg > .container {
     position: relative;
     z-index: 1;
 }

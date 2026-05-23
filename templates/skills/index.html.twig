@@ -22,77 +22,100 @@
     </div>
 </section>
 
-<section class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Mes <span class="highlight">certifications</span></h2>
-        <div class="certifications-grid">
-            {% for cert in portfolio.certifications %}
-                <div class="certification-card">
-                    <div class="certification-icon" aria-hidden="true">{{ cert.icon }}</div>
-                    <h3>{{ cert.name }}</h3>
-                    <p class="certification-date">{{ cert.subtitle }}</p>
-                    <p>{{ cert.description }}</p>
-                </div>
-            {% endfor %}
-        </div>
+<div class="page-orb-bg">
+    <div class="veille-orbs" aria-hidden="true">
+        <span class="veille-orb veille-orb--one"></span>
+        <span class="veille-orb veille-orb--two"></span>
+        <span class="veille-orb veille-orb--three"></span>
+        <span class="veille-orb veille-orb--four"></span>
+        <span class="veille-orb veille-orb--five"></span>
+        <span class="veille-orb veille-orb--six"></span>
+        <span class="veille-orb veille-orb--seven"></span>
+        <span class="veille-orb veille-orb--eight"></span>
+        <span class="veille-orb veille-orb--nine"></span>
+        <span class="veille-orb veille-orb--ten"></span>
+        <span class="veille-orb veille-orb--eleven"></span>
+        <span class="veille-orb veille-orb--twelve"></span>
+        <span class="veille-orb veille-orb--thirteen"></span>
+        <span class="veille-orb veille-orb--fourteen"></span>
+        <span class="veille-orb veille-orb--fifteen"></span>
+        <span class="veille-orb veille-orb--sixteen"></span>
+        <span class="veille-orb veille-orb--seventeen"></span>
+        <span class="veille-orb veille-orb--eighteen"></span>
     </div>
-</section>
 
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Langages de <span class="highlight">programmation</span></h2>
-        <div class="skills-grid">
-            {% for s in portfolio.languages %}
-                <div class="skill-card">
-                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
-                    <h3>{{ s.name }}</h3>
-                    {{ ui.level_bar(s.level) }}
-                </div>
-            {% endfor %}
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Mes <span class="highlight">certifications</span></h2>
+            <div class="certifications-grid">
+                {% for cert in portfolio.certifications %}
+                    <div class="certification-card">
+                        <div class="certification-icon" aria-hidden="true">{{ cert.icon }}</div>
+                        <h3>{{ cert.name }}</h3>
+                        <p class="certification-date">{{ cert.subtitle }}</p>
+                        <p>{{ cert.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Frameworks &amp; <span class="highlight">Outils</span></h2>
-        <div class="skills-grid">
-            {% for s in portfolio.tools %}
-                <div class="skill-card">
-                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
-                    <h3>{{ s.name }}</h3>
-                    {{ ui.level_bar(s.level) }}
-                </div>
-            {% endfor %}
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Langages de <span class="highlight">programmation</span></h2>
+            <div class="skills-grid">
+                {% for s in portfolio.languages %}
+                    <div class="skill-card">
+                        <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
+                        <h3>{{ s.name }}</h3>
+                        {{ ui.level_bar(s.level) }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">Compétences <span class="highlight">bureautiques</span></h2>
-        <div class="skills-grid">
-            {% for s in portfolio.officeTools %}
-                <div class="skill-card">
-                    <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
-                    <h3>{{ s.name }}</h3>
-                    {{ ui.level_bar(s.level) }}
-                </div>
-            {% endfor %}
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Frameworks &amp; <span class="highlight">Outils</span></h2>
+            <div class="skills-grid">
+                {% for s in portfolio.tools %}
+                    <div class="skill-card">
+                        <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
+                        <h3>{{ s.name }}</h3>
+                        {{ ui.level_bar(s.level) }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Compétences <span class="highlight">transversales</span></h2>
-        <div class="skills-grid">
-            {% for s in portfolio.softSkills %}
-                <div class="skill-card">
-                    <h3>{{ s.name }}</h3>
-                </div>
-            {% endfor %}
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Compétences <span class="highlight">bureautiques</span></h2>
+            <div class="skills-grid">
+                {% for s in portfolio.officeTools %}
+                    <div class="skill-card">
+                        <div class="skill-icon" style="background:{{ s.bg }};color:{{ s.color }};">{{ s.label }}</div>
+                        <h3>{{ s.name }}</h3>
+                        {{ ui.level_bar(s.level) }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Compétences <span class="highlight">transversales</span></h2>
+            <div class="skills-grid">
+                {% for s in portfolio.softSkills %}
+                    <div class="skill-card">
+                        <h3>{{ s.name }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock %}
