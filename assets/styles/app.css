@@ -2267,9 +2267,93 @@ html:not([data-theme="dark"]) .page-subtitle {
    VEILLE PAGE
    ======================================== */
 .veille-page {
+    position: relative;
+    overflow: hidden;
     background:
         radial-gradient(circle at 5% 20%, rgba(108, 99, 255, 0.08), transparent 38%),
         radial-gradient(circle at 95% 80%, rgba(255, 101, 132, 0.1), transparent 42%);
+}
+
+.veille-page > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.veille-orbs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.veille-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.2;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.veille-orb--one {
+    width: 220px;
+    height: 220px;
+    top: 8%;
+    left: -40px;
+    background: radial-gradient(circle at 30% 30%, rgba(90, 170, 255, 0.85), rgba(90, 170, 255, 0.25));
+    animation-name: orbFloatOne;
+    animation-duration: 42s;
+}
+
+.veille-orb--two {
+    width: 320px;
+    height: 320px;
+    top: 32%;
+    right: -120px;
+    background: radial-gradient(circle at 40% 40%, rgba(255, 111, 169, 0.7), rgba(255, 111, 169, 0.2));
+    animation-name: orbFloatTwo;
+    animation-duration: 58s;
+}
+
+.veille-orb--three {
+    width: 180px;
+    height: 180px;
+    bottom: 18%;
+    left: 12%;
+    background: radial-gradient(circle at 30% 30%, rgba(123, 99, 255, 0.7), rgba(123, 99, 255, 0.2));
+    animation-name: orbFloatThree;
+    animation-duration: 46s;
+}
+
+.veille-orb--four {
+    width: 260px;
+    height: 260px;
+    bottom: -80px;
+    right: 8%;
+    background: radial-gradient(circle at 35% 35%, rgba(89, 211, 178, 0.65), rgba(89, 211, 178, 0.2));
+    animation-name: orbFloatFour;
+    animation-duration: 64s;
+}
+
+@keyframes orbFloatOne {
+    from { transform: translate(0, 0); }
+    to { transform: translate(90px, 55px); }
+}
+
+@keyframes orbFloatTwo {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-120px, 70px); }
+}
+
+@keyframes orbFloatThree {
+    from { transform: translate(0, 0); }
+    to { transform: translate(80px, -60px); }
+}
+
+@keyframes orbFloatFour {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-100px, -80px); }
 }
 
 .veille-intro-card,
@@ -2311,7 +2395,7 @@ html:not([data-theme="dark"]) .page-subtitle {
 }
 
 .veille-section-card {
-    padding: 24px;
+    padding: 30px;
     margin-bottom: 22px;
     transition: var(--transition);
 }
@@ -2321,57 +2405,102 @@ html:not([data-theme="dark"]) .page-subtitle {
     box-shadow: var(--shadow-xl);
 }
 
-.veille-layout {
-    display: grid;
-    grid-template-columns: 180px minmax(0, 1fr) 180px;
-    gap: 18px;
-    align-items: stretch;
-}
-
 .veille-content h3 {
     color: var(--gray-900);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     font-size: 1.45rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 14px;
 }
 
 .veille-content h4 {
     color: var(--primary);
-    margin: 14px 0 8px;
-    font-size: 1rem;
+    margin: 18px 0 8px;
+    font-size: 1.05rem;
+    padding-left: 30px;
+    position: relative;
+}
+
+.veille-content h4::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-light);
 }
 
 .veille-content p {
     color: var(--gray-700);
-    margin-bottom: 10px;
+    margin-bottom: 11px;
+    text-wrap: pretty;
 }
 
 .veille-content p:last-child {
     margin-bottom: 0;
 }
 
-.media-slot {
-    min-height: 170px;
-    border-radius: var(--radius-sm);
-    border: 2px dashed rgba(108, 99, 255, 0.45);
-    background: linear-gradient(160deg, rgba(108, 99, 255, 0.12), rgba(255, 101, 132, 0.1));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 12px;
-    color: var(--gray-700);
+.veille-subsection {
+    padding-left: 42px;
 }
 
-.media-slot-label {
-    display: inline-block;
-    font-weight: 700;
+/* Tooltip de termes techniques */
+.term-tip {
+    position: relative;
+    cursor: help;
+    font-weight: 600;
     color: var(--primary-dark);
-    margin-bottom: 4px;
+    border-bottom: 1px dashed rgba(108, 99, 255, 0.6);
 }
 
-.media-slot p {
-    font-size: 0.86rem;
+.term-tip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%) translateY(8px);
+    width: min(280px, 80vw);
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #11182f;
+    color: #f5f7ff;
+    font-size: 0.83rem;
+    font-weight: 500;
+    line-height: 1.45;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 20;
+}
+
+.term-tip::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 2px);
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #11182f;
+    rotate: 45deg;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 19;
+}
+
+.term-tip:hover::after,
+.term-tip:focus::after,
+.term-tip:hover::before,
+.term-tip:focus::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
 
 .veille-section-card--conclusion {
@@ -2420,11 +2549,6 @@ html:not([data-theme="dark"]) .page-subtitle {
     border-color: rgba(255, 255, 255, 0.12);
 }
 
-[data-theme="dark"] .media-slot {
-    border-color: rgba(139, 131, 255, 0.65);
-    background: linear-gradient(160deg, rgba(108, 99, 255, 0.22), rgba(255, 101, 132, 0.18));
-}
-
 [data-theme="dark"] .veille-sources-list li {
     border-color: rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
@@ -2434,13 +2558,32 @@ html:not([data-theme="dark"]) .page-subtitle {
     color: var(--gray-700);
 }
 
+[data-theme="dark"] .term-tip {
+    color: var(--primary-light);
+    border-bottom-color: rgba(139, 131, 255, 0.8);
+}
+
+[data-theme="dark"] .term-tip::after,
+[data-theme="dark"] .term-tip::before {
+    background: #dbe2ff;
+    color: #11192e;
+}
+
 @media (max-width: 992px) {
-    .veille-layout {
-        grid-template-columns: 1fr;
+    .veille-section-card {
+        padding: 24px 20px;
     }
 
-    .media-slot {
-        min-height: 120px;
+    .veille-content h4 {
+        padding-left: 22px;
+    }
+
+    .veille-content h4::before {
+        left: 8px;
+    }
+
+    .veille-subsection {
+        padding-left: 26px;
     }
 
     .veille-sources-list {
