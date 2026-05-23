@@ -2296,6 +2296,35 @@ html:not([data-theme="dark"]) .page-subtitle {
     animation-direction: alternate;
 }
 
+html:not([data-theme="dark"]) .veille-orb {
+    filter: blur(1px) saturate(1.45);
+    opacity: 0.28;
+}
+
+html:not([data-theme="dark"]) .veille-orb--one {
+    background: radial-gradient(circle at 30% 30%, rgba(42, 176, 255, 0.95), rgba(42, 176, 255, 0.34));
+}
+
+html:not([data-theme="dark"]) .veille-orb--two {
+    background: radial-gradient(circle at 40% 40%, rgba(255, 70, 160, 0.82), rgba(255, 70, 160, 0.28));
+}
+
+html:not([data-theme="dark"]) .veille-orb--three {
+    background: radial-gradient(circle at 30% 30%, rgba(94, 54, 255, 0.82), rgba(94, 54, 255, 0.26));
+}
+
+html:not([data-theme="dark"]) .veille-orb--four {
+    background: radial-gradient(circle at 35% 35%, rgba(38, 220, 170, 0.8), rgba(38, 220, 170, 0.28));
+}
+
+html:not([data-theme="dark"]) .veille-orb--five {
+    background: radial-gradient(circle at 35% 35%, rgba(255, 150, 56, 0.74), rgba(255, 150, 56, 0.26));
+}
+
+html:not([data-theme="dark"]) .veille-orb--six {
+    background: radial-gradient(circle at 35% 35%, rgba(214, 88, 255, 0.74), rgba(214, 88, 255, 0.25));
+}
+
 .veille-orb--one {
     width: 220px;
     height: 220px;
