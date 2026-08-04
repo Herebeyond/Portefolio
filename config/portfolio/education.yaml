@@ -1,13 +1,13 @@
 formations:
     - period: '2024 — 2026'
-      title: 'BTS SIO — Option SLAM'
+    title: 'BTS SIO — Option SLAM (diplôme obtenu)'
       place: 'Lycée Beaupeyrat — Limoges'
       logo: images/Beaupeyrat.png
       alt: 'Lycée Beaupeyrat'
       description: |
           Solutions Logicielles et Applications Métiers. Formation axée sur le
           développement d'applications, les bases de données, la cybersécurité
-          et la gestion de projets informatiques.
+      et la gestion de projets informatiques. Diplôme obtenu en 2026.
 
     - period: '2022 — 2024'
       title: 'Licence Informatique — 1ère année'

@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         {% set p = portfolio.identity %}
-        {% set page_title = block('title') is defined ? block('title') : 'Portfolio — BTS SIO SLAM' %}
-        {% set page_description = block('description') is defined ? block('description') : (p.description|default('Portfolio de ' ~ p.name|default('Benjamin Baillard') ~ ', étudiant en BTS SIO SLAM.'))|striptags|trim %}
+        {% set page_title = block('title') is defined ? block('title') : 'Portfolio — Développeur logiciel' %}
+        {% set page_description = block('description') is defined ? block('description') : (p.description|default('Portfolio de ' ~ p.name|default('Benjamin Baillard') ~ ', diplômé BTS SIO SLAM.'))|striptags|trim %}
 
         <title>{{ page_title }}</title>
         <meta name="description" content="{{ page_description }}">
@@ -41,7 +41,7 @@
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "{{ p.name|default('Benjamin Baillard') }}",
-            "jobTitle": "{{ p.role|default('Étudiant en BTS SIO SLAM') }}",
+            "jobTitle": "{{ p.role|default('Développeur logiciel junior — BTS SIO SLAM diplômé') }}",
             "address": { "@type": "PostalAddress", "addressLocality": "{{ p.location|default('Limoges, France') }}" },
             "alumniOf": "{{ p.school|default('Lycée Beaupeyrat') }}",
             "url": "{{ app.request.schemeAndHttpHost }}",
