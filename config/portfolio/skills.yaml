@@ -1,8 +1,8 @@
 certifications:
     - { icon: '☁️',  name: 'AWS',           subtitle: 'Amazon Web Services',  description: 'Certification cloud computing Amazon Web Services.' }
     - { icon: '🔒',  name: 'ANSSI',         subtitle: 'Cybersécurité',        description: "Agence nationale de la sécurité des systèmes d'information." }
+    - { icon: '🤖', name: 'Career Essentials in Generative AI', subtitle: 'Microsoft & LinkedIn Learning', description: "Parcours certifiant sur les fondamentaux de l'IA générative et les enjeux éthiques." }
     - { icon: '🖥️', name: 'Pix — Avancé 1', subtitle: 'Compétences numériques', description: 'Certification Pix niveau Avancé 1 en compétences numériques.' }
-    - { icon: '🤖', name: 'Career Essentials in Generative AI', subtitle: 'Microsoft & LinkedIn Learning', description: 'Parcours officiel (5 cours, environ 4 heures) sur les fondamentaux de l IA générative, Microsoft 365 Copilot, les usages professionnels et les enjeux éthiques, validé par un certificat de réussite LinkedIn Learning.' }
 
 # level: note sur 5 (entiers ou demi)
 languages:
